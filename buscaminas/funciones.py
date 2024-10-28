@@ -25,6 +25,7 @@ def print_tablero():
             print (str(contador2 + 1)+ " |" + " ".join(tablero[contador2]) + "|")
         contador2 += 1
     print ("    " + " ".join(["¯" for _ in range(contador)]))
+    return tablero
 
 def poner_minas(dificult, contador, minas):
     tablero_m=[["x" for _ in range(contador)] for _ in range(contador)]
@@ -35,8 +36,16 @@ def poner_minas(dificult, contador, minas):
             random = r.randint(0, contador - 1)
             random2 = r.randint(0, contador - 1)
         tablero_m[random][random2] = "b"
-    for i in range(contador):
-        print (" ".join(tablero_m[i]))
+    return tablero_m
+
+def nose(tablero_m):
+    cosa = float(input("cosa: "))
+    for i in tablero_m:
+        if tablero_m[cosa[1]][cosa[2]] == "b":
+            print("a")
+        else:
+            print("b")
+
 dificult = int(input("Elige la dificultad (fácil 1, medio 2, difícil 3): "))
 contador = 0
 if dificult == 1:
@@ -49,3 +58,5 @@ elif dificult == 3:
     contador = 12
     minas = 16
 poner_minas(dificult, contador, minas)
+print(tablero_m)
+nose(tablero_m)
