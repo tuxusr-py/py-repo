@@ -35,8 +35,6 @@ def poner_minas(dificult, contador, minas):
             random = r.randint(0, contador - 1)
             random2 = r.randint(0, contador - 1)
         tablero_m[random][random2] = "b"
-    for i in range(contador):
-        print (" ".join(tablero_m[i]))
 dificult = int(input("Elige la dificultad (fácil 1, medio 2, difícil 3): "))
 contador = 0
 if dificult == 1:
@@ -48,4 +46,3 @@ elif dificult == 2:
 elif dificult == 3: 
     contador = 12
     minas = 10
-poner_minas(dificult, contador, minas)
