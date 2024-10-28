@@ -41,11 +41,11 @@ dificult = int(input("Elige la dificultad (fácil 1, medio 2, difícil 3): "))
 contador = 0
 if dificult == 1:
     contador = 4
-    minas = 10
+    minas = 4
 elif dificult == 2:
     contador = 8
     minas = 10
 elif dificult == 3: 
     contador = 12
-    minas = 10
+    minas = 16
 poner_minas(dificult, contador, minas)
