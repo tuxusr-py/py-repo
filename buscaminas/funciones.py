@@ -40,11 +40,12 @@ def poner_minas(dificult, contador, minas):
 
 def nose(tablero_m):
     cosa = int(input("cosa: "))
-    for i in tablero_m:
-        if tablero_m[cosa % 10][cosa // 10 % 10] == "b":
-            print("a")
-        else:
-            print("b")
+    print(cosa % 10)
+    print(cosa // 10 % 10)
+    if tablero_m[(cosa-1) % 10][(cosa-1) // 10 % 10] == "b":
+        print("a")
+    else:
+        print("b")
 
 dificult = int(input("Elige la dificultad (fácil 1, medio 2, difícil 3): "))
 contador = 0
@@ -58,4 +59,5 @@ elif dificult == 3:
     contador = 12
     minas = 16
 tablero_m = poner_minas(dificult, contador, minas)
+print(tablero_m)
 nose(tablero_m)
